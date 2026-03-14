@@ -123,7 +123,7 @@ p { margin:0; }
 .hero-visual::before {
   content:""; position:absolute; inset: 24px; border-radius: 28px; border:1px solid rgba(255,255,255,.06);
 }
-.hero-visual img { width: min(84%, 520px); opacity: .9; filter: drop-shadow(0 24px 48px rgba(0,0,0,.3)); }
+.hero-visual img { width: min(84%, 520px); opacity: .9; filter: drop-shadow(0 24px 48px rgba(0,0,0,.3)); transform: translateY(-68px);}
 .hero-actions { display:flex; flex-wrap:wrap; gap: 12px; margin-top: 24px; }
 .metric { padding: 18px; border-radius: 22px; background: rgba(255,255,255,.03); border:1px solid var(--line); }
 .metrics { display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top:26px; }
