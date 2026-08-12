@@ -1,4 +1,15 @@
 import { teachers } from './teachers-data.js';
+import clairePortrait from '../images/teachers/claire.svg';
+import christopherPortrait from '../images/teachers/christopher.svg';
+import dePortraits from '../images/teacher-de.svg';
+import ePortraits from '../images/teacher-e.svg';
+import fgPortraits from '../images/teacher-fg.svg';
+import jjPortraits from '../images/teacher-jj.svg';
+import kPortraits from '../images/teacher-k.svg';
+import lmPortraits from '../images/teacher-lm.svg';
+import nsPortraits from '../images/teacher-ns.svg';
+import stPortraits from '../images/teacher-st.svg';
+import tPortraits from '../images/teacher-t.svg';
 
 const grid = document.querySelector('[data-teacher-grid]');
 const modal = document.querySelector('[data-teacher-modal]');
@@ -17,23 +28,23 @@ const list = (items, empty = '履歷未列示') => {
 };
 
 const portraitSources = {
-  claire: { src: 'assets/images/teachers/claire.svg' },
-  christopher: { src: 'assets/images/teachers/christopher.svg' },
-  demian: { sprite: 'assets/images/teacher-de.svg' },
-  edgardo: { sprite: 'assets/images/teacher-de.svg' },
-  ej: { sprite: 'assets/images/teacher-e.svg' },
-  frank: { sprite: 'assets/images/teacher-fg.svg' },
-  gary: { sprite: 'assets/images/teacher-fg.svg' },
-  jason: { sprite: 'assets/images/teacher-jj.svg' },
-  judy: { sprite: 'assets/images/teacher-jj.svg' },
-  kyle: { sprite: 'assets/images/teacher-k.svg' },
-  linda: { sprite: 'assets/images/teacher-lm.svg' },
-  michelle: { sprite: 'assets/images/teacher-lm.svg' },
-  nina: { sprite: 'assets/images/teacher-ns.svg' },
-  sammy: { sprite: 'assets/images/teacher-ns.svg' },
-  sharon: { sprite: 'assets/images/teacher-st.svg' },
-  tiffany: { sprite: 'assets/images/teacher-st.svg' },
-  timothee: { sprite: 'assets/images/teacher-t.svg' },
+  claire: { src: clairePortrait },
+  christopher: { src: christopherPortrait },
+  demian: { sprite: dePortraits },
+  edgardo: { sprite: dePortraits },
+  ej: { sprite: ePortraits },
+  frank: { sprite: fgPortraits },
+  gary: { sprite: fgPortraits },
+  jason: { sprite: jjPortraits },
+  judy: { sprite: jjPortraits },
+  kyle: { sprite: kPortraits },
+  linda: { sprite: lmPortraits },
+  michelle: { sprite: lmPortraits },
+  nina: { sprite: nsPortraits },
+  sammy: { sprite: nsPortraits },
+  sharon: { sprite: stPortraits },
+  tiffany: { sprite: stPortraits },
+  timothee: { sprite: tPortraits },
 };
 
 const portrait = teacher => {
