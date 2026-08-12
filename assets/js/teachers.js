@@ -16,7 +16,34 @@ const list = (items, empty = '履歷未列示') => {
   return `<ul>${items.map(item => `<li>${esc(item)}</li>`).join('')}</ul>`;
 };
 
-const portrait = teacher => `<svg role="img" aria-label="${esc(teacher.name)} 老師照片" viewBox="0 0 180 254" preserveAspectRatio="xMidYMid slice"><use href="assets/images/teacher-portraits.svg#teacher-${teacher.slug}"></use></svg>`;
+const portraitSources = {
+  claire: { src: 'assets/images/teachers/claire.svg' },
+  christopher: { src: 'assets/images/teachers/christopher.svg' },
+  demian: { sprite: 'assets/images/teacher-de.svg' },
+  edgardo: { sprite: 'assets/images/teacher-de.svg' },
+  ej: { sprite: 'assets/images/teacher-e.svg' },
+  frank: { sprite: 'assets/images/teacher-fg.svg' },
+  gary: { sprite: 'assets/images/teacher-fg.svg' },
+  jason: { sprite: 'assets/images/teacher-jj.svg' },
+  judy: { sprite: 'assets/images/teacher-jj.svg' },
+  kyle: { sprite: 'assets/images/teacher-k.svg' },
+  linda: { sprite: 'assets/images/teacher-lm.svg' },
+  michelle: { sprite: 'assets/images/teacher-lm.svg' },
+  nina: { sprite: 'assets/images/teacher-ns.svg' },
+  sammy: { sprite: 'assets/images/teacher-ns.svg' },
+  sharon: { sprite: 'assets/images/teacher-st.svg' },
+  tiffany: { sprite: 'assets/images/teacher-st.svg' },
+  timothee: { sprite: 'assets/images/teacher-t.svg' },
+};
+
+const portrait = teacher => {
+  const source = portraitSources[teacher.slug];
+  if (!source) return '';
+  if (source.src) {
+    return `<img src="${source.src}" alt="${esc(teacher.name)} 老師照片" loading="lazy">`;
+  }
+  return `<svg role="img" aria-label="${esc(teacher.name)} 老師照片" viewBox="0 0 160 226" preserveAspectRatio="xMidYMid slice"><use href="${source.sprite}#teacher-${teacher.slug}"></use></svg>`;
+};
 
 const cardTemplate = teacher => `
   <article class="teacher-card" data-teacher-card="${esc(teacher.slug)}">
