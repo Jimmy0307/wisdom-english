@@ -1,21 +1,21 @@
 import { teachers } from './teachers-data.js';
-import clairePortrait from '../images/teachers/claire.svg';
-import christopherPortrait from '../images/teachers/christopher.svg';
-import demianPortrait from '../images/teachers/demian.svg';
-import edgardoPortrait from '../images/teachers/edgardo.svg';
-import ejPortrait from '../images/teachers/ej.svg';
-import frankPortrait from '../images/teachers/frank.svg';
-import garyPortrait from '../images/teachers/gary.svg';
-import jasonPortrait from '../images/teachers/jason.svg';
-import judyPortrait from '../images/teachers/judy.svg';
-import kylePortrait from '../images/teachers/kyle.svg';
-import lindaPortrait from '../images/teachers/linda.svg';
-import michellePortrait from '../images/teachers/michelle.svg';
-import ninaPortrait from '../images/teachers/nina.svg';
-import sammyPortrait from '../images/teachers/sammy.svg';
-import sharonPortrait from '../images/teachers/sharon.svg';
-import tiffanyPortrait from '../images/teachers/tiffany.svg';
-import timotheePortrait from '../images/teachers/timothee.svg';
+import claireRaw from '../images/teachers/claire.svg?raw';
+import christopherRaw from '../images/teachers/christopher.svg?raw';
+import demianRaw from '../images/teachers/demian.svg?raw';
+import edgardoRaw from '../images/teachers/edgardo.svg?raw';
+import ejRaw from '../images/teachers/ej.svg?raw';
+import frankRaw from '../images/teachers/frank.svg?raw';
+import garyRaw from '../images/teachers/gary.svg?raw';
+import jasonRaw from '../images/teachers/jason.svg?raw';
+import judyRaw from '../images/teachers/judy.svg?raw';
+import kyleRaw from '../images/teachers/kyle.svg?raw';
+import lindaRaw from '../images/teachers/linda.svg?raw';
+import michelleRaw from '../images/teachers/michelle.svg?raw';
+import ninaRaw from '../images/teachers/nina.svg?raw';
+import sammyRaw from '../images/teachers/sammy.svg?raw';
+import sharonRaw from '../images/teachers/sharon.svg?raw';
+import tiffanyRaw from '../images/teachers/tiffany.svg?raw';
+import timotheeRaw from '../images/teachers/timothee.svg?raw';
 
 const grid = document.querySelector('[data-teacher-grid]');
 const modal = document.querySelector('[data-teacher-modal]');
@@ -33,30 +33,37 @@ const list = (items, empty = '履歷未列示') => {
   return `<ul>${items.map(item => `<li>${esc(item)}</li>`).join('')}</ul>`;
 };
 
+const extractRasterDataUrl = raw => {
+  const match = raw.match(/(?:href|xlink:href)=["'](data:image\/(?:jpeg|jpg|png|webp);base64,[^"']+)["']/i);
+  return match?.[1] || '';
+};
+
 const portraitSources = {
-  claire: clairePortrait,
-  christopher: christopherPortrait,
-  demian: demianPortrait,
-  edgardo: edgardoPortrait,
-  ej: ejPortrait,
-  frank: frankPortrait,
-  gary: garyPortrait,
-  jason: jasonPortrait,
-  judy: judyPortrait,
-  kyle: kylePortrait,
-  linda: lindaPortrait,
-  michelle: michellePortrait,
-  nina: ninaPortrait,
-  sammy: sammyPortrait,
-  sharon: sharonPortrait,
-  tiffany: tiffanyPortrait,
-  timothee: timotheePortrait,
+  claire: extractRasterDataUrl(claireRaw),
+  christopher: extractRasterDataUrl(christopherRaw),
+  demian: extractRasterDataUrl(demianRaw),
+  edgardo: extractRasterDataUrl(edgardoRaw),
+  ej: extractRasterDataUrl(ejRaw),
+  frank: extractRasterDataUrl(frankRaw),
+  gary: extractRasterDataUrl(garyRaw),
+  jason: extractRasterDataUrl(jasonRaw),
+  judy: extractRasterDataUrl(judyRaw),
+  kyle: extractRasterDataUrl(kyleRaw),
+  linda: extractRasterDataUrl(lindaRaw),
+  michelle: extractRasterDataUrl(michelleRaw),
+  nina: extractRasterDataUrl(ninaRaw),
+  sammy: extractRasterDataUrl(sammyRaw),
+  sharon: extractRasterDataUrl(sharonRaw),
+  tiffany: extractRasterDataUrl(tiffanyRaw),
+  timothee: extractRasterDataUrl(timotheeRaw),
 };
 
 const portrait = teacher => {
   const src = portraitSources[teacher.slug];
-  if (!src) return '';
-  return `<img src="${src}" alt="${esc(teacher.name)} 老師照片" loading="lazy">`;
+  if (!src) {
+    return `<div class="teacher-photo-fallback" aria-label="${esc(teacher.name)} 老師">${esc(teacher.name.slice(0, 1))}</div>`;
+  }
+  return `<img src="${src}" alt="${esc(teacher.name)} 老師照片" loading="lazy" decoding="async">`;
 };
 
 const cardTemplate = teacher => `
