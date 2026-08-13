@@ -1,0 +1,63 @@
+name: Sync training gallery from Google Drive
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: training-gallery-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      TRAINING_DRIVE_ROOT_FOLDER_ID: 1JaMJdynOVUD5FhHevrCLVRuZ4xJUtCm5
+      GOOGLE_DRIVE_API_KEY: ${{ secrets.GOOGLE_DRIVE_API_KEY }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check sync credential
+        id: auth
+        shell: bash
+        run: |
+          if [ -z "$GOOGLE_DRIVE_API_KEY" ]; then
+            echo "active=false" >> "$GITHUB_OUTPUT"
+            echo "Google Drive sync is staged but inactive until repository secret GOOGLE_DRIVE_API_KEY is configured." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "active=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Generate gallery manifest
+        if: steps.auth.outputs.active == 'true'
+        run: node scripts/sync-training-drive.mjs
+
+      - name: Publish manifest change
+        if: steps.auth.outputs.active == 'true'
+        shell: bash
+        run: |
+          if git diff --quiet -- assets/data/training-gallery.json; then
+            echo "No training gallery changes detected." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          git config user.name "wisdom-gallery-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/data/training-gallery.json
+          git commit -m "chore: sync training gallery from Drive"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "Training gallery changed; manifest committed to main. GitHub Pages deployment will start automatically." >> "$GITHUB_STEP_SUMMARY"
