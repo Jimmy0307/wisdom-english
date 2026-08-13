@@ -1,15 +1,21 @@
 import { teachers } from './teachers-data.js';
 import clairePortrait from '../images/teachers/claire.svg';
 import christopherPortrait from '../images/teachers/christopher.svg';
-import dePortraits from '../images/teacher-de.svg';
-import ePortraits from '../images/teacher-e.svg';
-import fgPortraits from '../images/teacher-fg.svg';
-import jjPortraits from '../images/teacher-jj.svg';
-import kPortraits from '../images/teacher-k.svg';
-import lmPortraits from '../images/teacher-lm.svg';
-import nsPortraits from '../images/teacher-ns.svg';
-import stPortraits from '../images/teacher-st.svg';
-import tPortraits from '../images/teacher-t.svg';
+import demianPortrait from '../images/teachers/demian.svg';
+import edgardoPortrait from '../images/teachers/edgardo.svg';
+import ejPortrait from '../images/teachers/ej.svg';
+import frankPortrait from '../images/teachers/frank.svg';
+import garyPortrait from '../images/teachers/gary.svg';
+import jasonPortrait from '../images/teachers/jason.svg';
+import judyPortrait from '../images/teachers/judy.svg';
+import kylePortrait from '../images/teachers/kyle.svg';
+import lindaPortrait from '../images/teachers/linda.svg';
+import michellePortrait from '../images/teachers/michelle.svg';
+import ninaPortrait from '../images/teachers/nina.svg';
+import sammyPortrait from '../images/teachers/sammy.svg';
+import sharonPortrait from '../images/teachers/sharon.svg';
+import tiffanyPortrait from '../images/teachers/tiffany.svg';
+import timotheePortrait from '../images/teachers/timothee.svg';
 
 const grid = document.querySelector('[data-teacher-grid]');
 const modal = document.querySelector('[data-teacher-modal]');
@@ -28,32 +34,29 @@ const list = (items, empty = '履歷未列示') => {
 };
 
 const portraitSources = {
-  claire: { src: clairePortrait },
-  christopher: { src: christopherPortrait },
-  demian: { sprite: dePortraits },
-  edgardo: { sprite: dePortraits },
-  ej: { sprite: ePortraits },
-  frank: { sprite: fgPortraits },
-  gary: { sprite: fgPortraits },
-  jason: { sprite: jjPortraits },
-  judy: { sprite: jjPortraits },
-  kyle: { sprite: kPortraits },
-  linda: { sprite: lmPortraits },
-  michelle: { sprite: lmPortraits },
-  nina: { sprite: nsPortraits },
-  sammy: { sprite: nsPortraits },
-  sharon: { sprite: stPortraits },
-  tiffany: { sprite: stPortraits },
-  timothee: { sprite: tPortraits },
+  claire: clairePortrait,
+  christopher: christopherPortrait,
+  demian: demianPortrait,
+  edgardo: edgardoPortrait,
+  ej: ejPortrait,
+  frank: frankPortrait,
+  gary: garyPortrait,
+  jason: jasonPortrait,
+  judy: judyPortrait,
+  kyle: kylePortrait,
+  linda: lindaPortrait,
+  michelle: michellePortrait,
+  nina: ninaPortrait,
+  sammy: sammyPortrait,
+  sharon: sharonPortrait,
+  tiffany: tiffanyPortrait,
+  timothee: timotheePortrait,
 };
 
 const portrait = teacher => {
-  const source = portraitSources[teacher.slug];
-  if (!source) return '';
-  if (source.src) {
-    return `<img src="${source.src}" alt="${esc(teacher.name)} 老師照片" loading="lazy">`;
-  }
-  return `<svg role="img" aria-label="${esc(teacher.name)} 老師照片" viewBox="0 0 160 226" preserveAspectRatio="xMidYMid slice"><use href="${source.sprite}#teacher-${teacher.slug}"></use></svg>`;
+  const src = portraitSources[teacher.slug];
+  if (!src) return '';
+  return `<img src="${src}" alt="${esc(teacher.name)} 老師照片" loading="lazy">`;
 };
 
 const cardTemplate = teacher => `
