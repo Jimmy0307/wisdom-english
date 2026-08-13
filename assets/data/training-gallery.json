@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "provider": "google-drive",
+    "rootFolderId": "1JaMJdynOVUD5FhHevrCLVRuZ4xJUtCm5"
+  },
+  "albums": [
+    {
+      "date": "2026-08-12",
+      "folderId": "1wU318-VdMO96Q6Bf8PZwUmXx0z0A6MKJ",
+      "photos": [
+        { "id": "1Ldnh-uhW4rci1MJ56yS_NSjLFDX5cXPv", "name": "LINE_ALBUM_師訓照片_260812_20.jpg", "order": 20 },
+        { "id": "1jg0DpH1De5b4u4ASoVf4j21UPMkGl3Gh", "name": "LINE_ALBUM_師訓照片_260812_24.jpg", "order": 24 },
+        { "id": "1wmeqQOK10yLRbSPZKvJ2jErtCysQs9U1", "name": "LINE_ALBUM_師訓照片_260812_26.jpg", "order": 26 },
+        { "id": "130C1cI1iiYf9dCvxhCIQ41y1TmpkYiNE", "name": "LINE_ALBUM_師訓照片_260812_28.jpg", "order": 28 },
+        { "id": "1VzevRG4vU2i5kAlvCgqziZI8fh25daFM", "name": "LINE_ALBUM_師訓照片_260812_31.jpg", "order": 31 },
+        { "id": "1H5TI1PK3fWQCF7_9GIPaUI2stWIyraq5", "name": "LINE_ALBUM_師訓照片_260812_41.jpg", "order": 41 },
+        { "id": "1HaeDqcOeKIUViIXl4hLKZH6R5IaXVvOq", "name": "LINE_ALBUM_師訓照片_260812_48.jpg", "order": 48 },
+        { "id": "1B_nVGA8jk5Yq-vVzyLSXibNWNQ4ne0pr", "name": "LINE_ALBUM_師訓照片_260812_69.jpg", "order": 69 },
+        { "id": "1HDLHZXXKvY5tl6_NAim3b4PqKN6e3Ad-", "name": "LINE_ALBUM_師訓照片_260812_74.jpg", "order": 74 },
+        { "id": "1xUMq7evdpEs3gmOxNDTVtGTm1iiBJWQX", "name": "LINE_ALBUM_師訓照片_260812_81.jpg", "order": 81 },
+        { "id": "19XKFyViV-XN-LSa5QFv-50KYnsBFgIgK", "name": "LINE_ALBUM_師訓照片_260812_95.jpg", "order": 95 },
+        { "id": "1GvWWJ3tjsLMKHEgVHc34gCNjHuvM83kq", "name": "LINE_ALBUM_師訓照片_260812_100.jpg", "order": 100 },
+        { "id": "1bzStigTP0pRoo2D8KOfgZ2CgFAw2J9jv", "name": "LINE_ALBUM_師訓照片_260812_101.jpg", "order": 101 },
+        { "id": "1RhefcT135owP_qs5oGFLoKmS5dmBJ3Ar", "name": "LINE_ALBUM_師訓照片_260812_104.jpg", "order": 104 },
+        { "id": "1MWPODvV-DdMg1XdPgeMzmKaBE3-PQ78f", "name": "LINE_ALBUM_師訓照片_260812_108.jpg", "order": 108 },
+        { "id": "1GNZIP3WPWHS60hK016ti2Kw_ZUGO50xE", "name": "LINE_ALBUM_師訓照片_260812_116.jpg", "order": 116 },
+        { "id": "1mM0CUn_90fiRwMgPDM6aHtiGtt4x8sec", "name": "LINE_ALBUM_師訓照片_260812_118.jpg", "order": 118 },
+        { "id": "1ug1Kn8vl2IdKkKYsd39lGN3yvAk-8QEh", "name": "LINE_ALBUM_師訓照片_260812_123.jpg", "order": 123 },
+        { "id": "1LqW_qaFiB8wOX8079Y7rERRNEXXOU_3Y", "name": "LINE_ALBUM_師訓照片_260812_127.jpg", "order": 127 },
+        { "id": "1dQe97t7kKMmPKVel-foLX1z3zPUHUQsM", "name": "LINE_ALBUM_師訓照片_260812_129.jpg", "order": 129 },
+        { "id": "1lc_inFBAIrBe0paeb_huaJ9IGre5VWk7", "name": "LINE_ALBUM_師訓照片_260812_130.jpg", "order": 130 },
+        { "id": "1BCfOH_ZerVb1-8P-5kST0NXog5AiLkNv", "name": "LINE_ALBUM_師訓照片_260812_152.jpg", "order": 152 },
+        { "id": "1Jk6NBCiOwQUyqxaK9ZHFYQ1pgTROA3oS", "name": "LINE_ALBUM_師訓照片_260812_153.jpg", "order": 153 },
+        { "id": "10xz_KbKQLfdDT-2weevX-epRrIxU7GUW", "name": "LINE_ALBUM_師訓照片_260812_162.jpg", "order": 162 },
+        { "id": "1KLbnUZ4G11yUKcJ5Bdc9IrEwYdsC5shu", "name": "LINE_ALBUM_師訓照片_260812_163.jpg", "order": 163 },
+        { "id": "1evs-PJ5H-fLkdtu4sgLEktCNj8HaAug2", "name": "LINE_ALBUM_師訓照片_260812_165.jpg", "order": 165 },
+        { "id": "1Fkj1nHBywzjLq-RHHR5po6ujxAUndsM5", "name": "LINE_ALBUM_師訓照片_260812_166.jpg", "order": 166 },
+        { "id": "13qUlbP2rX0zCtUD6LGM2jImKL_Mvlk6v", "name": "LINE_ALBUM_師訓照片_260812_171.jpg", "order": 171 }
+      ]
+    }
+  ]
+}

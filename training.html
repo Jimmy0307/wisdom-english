@@ -11,15 +11,16 @@
     .training-principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
     .training-principle{border:1px solid var(--line);border-radius:22px;padding:22px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015))}
     .training-principle strong{display:block;color:var(--accent);letter-spacing:.08em;margin-bottom:8px}.training-principle p{margin:0;color:var(--muted);line-height:1.9}
-    .training-records{padding:30px 0 72px}.training-record-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.training-record-head h2{margin:0 0 8px}
+    .training-records{padding:30px 0 72px}.training-record-head{margin-bottom:26px}.training-record-head h2{margin:0 0 8px}
+    .training-albums{display:grid;gap:34px}.training-album{display:grid;gap:16px}.training-album-head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+    .training-album-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}.training-album-title h3{margin:0;font-size:1.25rem}.training-album-kicker{color:var(--muted);font-size:.78rem;letter-spacing:.14em;font-weight:800}
     .training-date{flex:0 0 auto;border:1px solid var(--line);border-radius:999px;padding:9px 14px;color:var(--accent);font-weight:800;letter-spacing:.08em}
     .training-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
     .training-shot{margin:0;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:#14110f;aspect-ratio:4/3}
     .training-shot-media{width:100%;height:100%;position:relative}.training-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease,filter .35s ease}.training-shot:hover img{transform:scale(1.025);filter:brightness(1.04)}
     .training-shot-fallback{width:100%;height:100%;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.76rem;letter-spacing:.14em;line-height:1.8;background:linear-gradient(145deg,#1d1815,#0f0d0c)}
-    .training-note{margin-top:18px;color:var(--muted);font-size:.93rem;line-height:1.8}
     @media(max-width:900px){.training-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:680px){.training-principles{grid-template-columns:1fr}.training-record-head{align-items:flex-start;flex-direction:column}.training-gallery{grid-template-columns:1fr;gap:12px}.training-shot{border-radius:16px}}
+    @media(max-width:680px){.training-principles{grid-template-columns:1fr}.training-album-head{align-items:flex-start;flex-direction:column}.training-gallery{grid-template-columns:1fr;gap:12px}.training-shot{border-radius:16px}}
   </style>
 </head>
 <body>
@@ -39,9 +40,9 @@
     </div>
   </div></section>
   <section class="training-records" aria-labelledby="training-record-title">
-    <div class="training-record-head"><div><span class="eyebrow">TRAINING RECORDS</span><h2 id="training-record-title">師訓紀錄</h2><p class="muted">依活動日期整理實際師訓照片，記錄團隊共同備課、交流與教學校準的過程。</p></div><div class="training-date">2026.08.12</div></div>
-    <div class="training-gallery" data-training-gallery></div>
-    <p class="training-note">2026 年 8 月 12 日師訓相簿，共 28 張，依原始相簿順序排列。</p>
+    <div class="training-record-head"><span class="eyebrow">TRAINING RECORDS</span><h2 id="training-record-title">師訓紀錄</h2><p class="muted">依活動日期整理實際師訓照片，記錄團隊共同備課、交流與教學校準的過程。</p></div>
+    <div class="training-albums" data-training-albums></div>
+    <noscript><p class="muted">請啟用 JavaScript 以查看師訓相簿。</p></noscript>
   </section>
 </main>
 <footer class="footer"><div class="container footer-wrap"><div><strong>Wisdom 唯思英文</strong><br><span>Structured English Learning Studio</span></div><div>官方 LINE：@629ptzrt</div></div></footer>
