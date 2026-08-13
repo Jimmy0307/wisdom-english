@@ -17,7 +17,8 @@ export default defineConfig({
         claire: resolve(__dirname, 'teachers/claire.html'),
         juniorHigh: resolve(__dirname, 'courses/junior-high.html'),
         seniorHigh: resolve(__dirname, 'courses/senior-high.html'),
-        certification: resolve(__dirname, 'courses/certification.html')
+        certification: resolve(__dirname, 'courses/certification.html'),
+        privateSchool: resolve(__dirname, 'courses/private-school.html')
       }
     }
   }
